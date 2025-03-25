@@ -1,0 +1,38 @@
+<h1>Update Entry</h1>
+
+<form action="/update" method="POST">
+  <input type="hidden" name="id" value="{{entry.id}}">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{entry.name}}" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" value="{{entry.phone}}" required>
+  </div>
+  <button type="submit" class="btn submit">Изменить</button>
+  <button type="button" id="deleteBtn" class="btn delete">Удалить</button>
+</form>
+
+{{cancelButton}}
+
+<script>
+  document.getElementById('name').addEventListener('input', function() {
+    document.getElementById('deleteBtn').disabled = this.value !== '{{entry.name}}';
+  });
+  
+  document.getElementById('deleteBtn').addEventListener('click', function() {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/delete';
+    
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'id';
+    input.value = '{{entry.id}}';
+    
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+  });
+</script>

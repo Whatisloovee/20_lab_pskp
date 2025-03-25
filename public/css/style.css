@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .entries-list {
+    margin: 20px 0;
+  }
+  
+  .entry-button {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .entry-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .entry-name {
+    font-weight: bold;
+  }
+  
+  .entry-phone {
+    color: #666;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 10px 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  .btn.cancel {
+    background-color: #f44336;
+  }
+  
+  .btn.cancel:hover {
+    background-color: #d32f2f;
+  }
+  
+  .btn.add {
+    background-color: #2196F3;
+  }
+  
+  .btn.add:hover {
+    background-color: #0b7dda;
+  }
+  
+  .btn.delete {
+    background-color: #ff9800;
+  }
+  
+  .btn.delete:hover {
+    background-color: #e68a00;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
