@@ -8,7 +8,6 @@ const app = express();
 const PORT = 3000;
 const DATA_FILE = path.join(__dirname, 'data', 'directory.json');
 
-// Configure Handlebars
 app.engine('hbs', engine({
   extname: '.hbs',
   helpers: {
@@ -20,11 +19,9 @@ app.engine('hbs', engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
-// Helper function to read/write data
 function readData() {
   const data = fs.readFileSync(DATA_FILE, 'utf8');
   return JSON.parse(data);
@@ -34,7 +31,6 @@ function writeData(data) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
 }
 
-// Routes
 app.get('/', (req, res) => {
   const entries = readData();
   res.render('home', { entries });
@@ -94,7 +90,6 @@ app.post('/delete', (req, res) => {
   res.redirect('/');
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

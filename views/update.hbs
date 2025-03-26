@@ -16,23 +16,3 @@
 
 {{cancelButton}}
 
-<script>
-  document.getElementById('name').addEventListener('input', function() {
-    document.getElementById('deleteBtn').disabled = this.value !== '{{entry.name}}';
-  });
-  
-  document.getElementById('deleteBtn').addEventListener('click', function() {
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = '/delete';
-    
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'id';
-    input.value = '{{entry.id}}';
-    
-    form.appendChild(input);
-    document.body.appendChild(form);
-    form.submit();
-  });
-</script>
